@@ -36,7 +36,7 @@ const darkTheme: Theme = createTheme({
       main: '#fff',
     },
     secondary: {
-      main: blue[500],
+      main: '#fff',
     },
     background: {
       paper: 'black',
