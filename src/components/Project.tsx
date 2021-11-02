@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Divider, Typography } from '@mui/material';
+import { Card, CardContent, Container, Typography } from '@mui/material';
 import { projectInfo } from '../contents/data';
 
 type ProjectProps = {};

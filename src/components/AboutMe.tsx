@@ -1,17 +1,15 @@
-import { Card, CardContent, CardMedia, Stack, Typography, Container } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Container } from '@mui/material';
 import profile from '../assets/profile.jpg';
-import { useTheme } from '@mui/material/styles';
 
 type AboutProps = {};
 
 const AboutMe = (props: AboutProps) => {
-  const globalTheme = useTheme();
   return (
     <Container id="AboutMe" sx={{ display: 'flex', flexDirection: 'column' }}>
       <Typography color="secondary" align="center" variant="h3">
         About Me
       </Typography>
-      <Card raised={true} sx={{ display: 'flex' }}>
+      <Card sx={{ display: 'flex' }}>
         <CardMedia component="img" height="100vh" image={profile} alt="Profile image" />
         <CardContent>
           <Typography>

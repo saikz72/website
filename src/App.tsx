@@ -11,7 +11,16 @@ import { createTheme, Theme, ThemeProvider } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
 import { useState } from 'react';
 
+/*Common Theme configuration for both dark and light mode */
+const commonTheme: any = {
+  typography: {
+    fontSize: 12,
+  },
+};
+
+/*Light Theme configuration */
 const lightTheme: Theme = createTheme({
+  ...commonTheme,
   palette: {
     mode: 'light',
     primary: {
@@ -29,7 +38,9 @@ const lightTheme: Theme = createTheme({
   },
 });
 
+/*Dark Theme configuration */
 const darkTheme: Theme = createTheme({
+  ...commonTheme,
   palette: {
     mode: 'dark',
     primary: {
