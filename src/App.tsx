@@ -14,7 +14,7 @@ import { useState } from 'react';
 /*Common Theme configuration for both dark and light mode */
 const commonTheme: any = {
   typography: {
-    fontSize: 12,
+    fontSize: 11.5,
   },
 };
 
