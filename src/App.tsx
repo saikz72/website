@@ -63,8 +63,6 @@ function App() {
   const [theme, setTheme] = useState<string>('dark');
 
   const globalTheme = theme === 'light' ? lightTheme : darkTheme;
-  console.log('pressed');
-
   return (
     <ThemeProvider theme={globalTheme}>
       <Navbar setTheme={setTheme} theme={theme} />
