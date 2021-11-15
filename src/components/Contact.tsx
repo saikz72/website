@@ -6,7 +6,7 @@ const Contact = (props: ContactProps) => {
   return (
     <Container id="Contact" sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
       <Typography color="secondary" variant="h3">
-        Get in touch
+        Get in touch soon please
       </Typography>
     </Container>
   );
