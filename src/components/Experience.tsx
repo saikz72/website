@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Stack, Typography, CardMedia } from '@mui/material';
+import { Card, CardContent, Container, Stack, Typography, CardMedia, Box, Divider } from '@mui/material';
 import { experienceInfo } from '../contents/data';
 import profile from '../assets/profile.jpg';
 import facebookLogo from '../assets/Facebook-Logo.png';
@@ -9,7 +9,7 @@ type InformationCardProps = {
   companyName: string;
   role: string;
   description: string;
-  date: number; //update this value to display date correctly
+  date: string; //update this value to display date correctly
 };
 
 const companyLogo = (companyName: String) => {
@@ -22,27 +22,30 @@ const companyLogo = (companyName: String) => {
 };
 
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
-  const { companyName, role, description, date } = props;
+  const { role, description, date } = props;
   return (
-    <Card raised={true} sx={{ margin: 4 }}>
+    <Card raised={true} sx={{ margin: 4, maxWidth: 345 }}>
       <CardContent>
         <Stack direction="column">
-          <CardMedia component="img" height="100vh" image={companyLogo(companyName)} alt="Company Logo" />s
-          <Stack direction="row">
-            <Typography variant="button">Company:</Typography>
-            <Typography>{companyName}</Typography>
+          <CardMedia component="img" height="100vh" image={facebookLogo} alt="Company Logo" />
+          <Divider />
+          <Stack direction="column">
+            <Typography align="left" gutterBottom variant="h6">
+              {role}
+            </Typography>
+          </Stack>
+          <Stack direction="column">
+            <Typography paragraph gutterBottom variant="subtitle1">
+              {description}
+            </Typography>
           </Stack>
           <Stack direction="row">
-            <Typography>Role:</Typography>
-            <Typography>{role}</Typography>
-          </Stack>
-          <Stack direction="row">
-            <Typography>Description:</Typography>
-            <Typography>{description}</Typography>
-          </Stack>
-          <Stack direction="row">
-            <Typography>Date:</Typography>
-            <Typography>{date}</Typography>
+            <Typography align="left" variant="subtitle2" marginRight="4px">
+              Date:
+            </Typography>
+            <Typography align="left" gutterBottom variant="subtitle2">
+              {date}
+            </Typography>
           </Stack>
         </Stack>
       </CardContent>
@@ -56,13 +59,13 @@ const Project = (props: ExperienceProps): React.ReactElement => {
       <Typography color="secondary" align="center" variant="h3">
         Experiences
       </Typography>
-      <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
         {experienceInfo.map(({ companyName, role, description, date }, index) => {
           return (
             <InformationCard key={index} companyName={companyName} role={role} description={description} date={date} />
           );
         })}
-      </Container>
+      </Box>
     </div>
   );
 };
