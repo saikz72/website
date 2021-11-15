@@ -10,7 +10,10 @@ import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import WorkIcon from '@mui/icons-material/Work';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { IconButton, Link, Stack, Tooltip } from '@mui/material';
+import { IconButton, Link, ListItemIcon, MenuItem, Stack, Tooltip } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 
 type NavbarProps = {
   setTheme: React.Dispatch<React.SetStateAction<string>>;
@@ -19,6 +22,17 @@ type NavbarProps = {
 
 function Navbar(props: NavbarProps) {
   const { setTheme, theme } = props;
+  const matches = useMediaQuery('(min-width:600px)');
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleThemeToggle = (): void => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -27,20 +41,29 @@ function Navbar(props: NavbarProps) {
   const ThemeIcon = () => {
     return theme === 'light' ? (
       <Tooltip title="Toogle to dark mode">
-        <LightModeIcon style={{}} onClick={handleThemeToggle} />
+        <LightModeIcon color="secondary" onClick={handleThemeToggle} />
       </Tooltip>
     ) : (
       <Tooltip title="Toogle to light mode">
-        <DarkModeIcon onClick={handleThemeToggle} />
+        <DarkModeIcon color="secondary" onClick={handleThemeToggle} />
       </Tooltip>
     );
   };
 
-  return (
-    <React.Fragment>
+  const menuToolTip = (
+    <Tooltip title="Account settings">
+      <IconButton onClick={handleMenuClick} size="small" sx={{ ml: 2 }}>
+        <MenuIcon color="secondary" />
+      </IconButton>
+    </Tooltip>
+  );
+
+  const webView = (
+    <div>
       <CssBaseline />
       <AppBar color="default" position="absolute" enableColorOnDark={true} elevation={0}>
         <Toolbar>
+          {/** Header for mobile view */}
           <Typography color="secondary" variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Saikou Ceesay
           </Typography>
@@ -82,8 +105,73 @@ function Navbar(props: NavbarProps) {
         </Toolbar>
       </AppBar>
       <Toolbar />
-    </React.Fragment>
+    </div>
   );
+
+  const mobileView = (
+    <div>
+      <CssBaseline />
+      <AppBar color="default" position="absolute" enableColorOnDark={true} elevation={0}>
+        <Toolbar>
+          <Typography color="secondary" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Saikou Ceesay
+          </Typography>
+          {menuToolTip}
+          <Menu
+            color="secondary"
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link href="#AboutMe" color="secondary">
+                <ListItemIcon>
+                  <HomeIcon color="secondary" fontSize="small" />
+                </ListItemIcon>
+                About
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link href="#Experience" color="secondary">
+                <ListItemIcon>
+                  <WorkIcon color="secondary" fontSize="small" />
+                </ListItemIcon>
+                Experiences
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link href="#Project" color="secondary">
+                <ListItemIcon>
+                  <CodeIcon color="secondary" fontSize="small" />
+                </ListItemIcon>
+                Projects
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link href="#Contact" color="secondary">
+                <ListItemIcon>
+                  <ContactSupportIcon color="secondary" fontSize="small" />
+                </ListItemIcon>
+                Contacts
+              </Link>
+            </MenuItem>
+          </Menu>
+          <IconButton color="secondary">
+            <Stack>
+              <ThemeIcon />
+            </Stack>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </div>
+  );
+
+  return matches ? webView : mobileView;
 }
 
 export default Navbar;

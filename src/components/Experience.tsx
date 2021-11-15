@@ -1,6 +1,7 @@
 import { Card, CardContent, Container, Stack, Typography, CardMedia } from '@mui/material';
 import { experienceInfo } from '../contents/data';
 import profile from '../assets/profile.jpg';
+import facebookLogo from '../assets/Facebook-Logo.png';
 
 type ExperienceProps = {};
 
@@ -11,13 +12,22 @@ type InformationCardProps = {
   date: number; //update this value to display date correctly
 };
 
+const companyLogo = (companyName: String) => {
+  switch (companyName) {
+    case 'Facebook':
+      return facebookLogo;
+    default:
+      return '';
+  }
+};
+
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
   const { companyName, role, description, date } = props;
   return (
     <Card raised={true} sx={{ margin: 4 }}>
       <CardContent>
         <Stack direction="column">
-          <CardMedia component="img" height="100vh" image={profile} alt="Profile image" />s
+          <CardMedia component="img" height="100vh" image={companyLogo(companyName)} alt="Company Logo" />s
           <Stack direction="row">
             <Typography variant="button">Company:</Typography>
             <Typography>{companyName}</Typography>
@@ -47,8 +57,10 @@ const Project = (props: ExperienceProps): React.ReactElement => {
         Experiences
       </Typography>
       <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-        {experienceInfo.map(({ companyName, role, description, date }) => {
-          return <InformationCard companyName={companyName} role={role} description={description} date={date} />;
+        {experienceInfo.map(({ companyName, role, description, date }, index) => {
+          return (
+            <InformationCard key={index} companyName={companyName} role={role} description={description} date={date} />
+          );
         })}
       </Container>
     </div>

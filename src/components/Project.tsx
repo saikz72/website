@@ -29,8 +29,8 @@ const Project = (props: ProjectProps): React.ReactElement => {
         Projects
       </Typography>
       <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-        {projectInfo.map(({ title, description, date }) => {
-          return <InformationCard title={title} description={description} date={date} />;
+        {projectInfo.map(({ title, description, date }, index) => {
+          return <InformationCard key={index} title={title} description={description} date={date} />;
         })}
       </Container>
     </div>
