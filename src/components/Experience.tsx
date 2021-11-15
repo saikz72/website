@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Stack, Typography, CardMedia, Box, Divider } from '@mui/material';
+import { Card, CardContent, Stack, Typography, CardMedia, Box, Divider } from '@mui/material';
 import { experienceInfo } from '../contents/data';
 import profile from '../assets/profile.jpg';
 import facebookLogo from '../assets/Facebook-Logo.png';
