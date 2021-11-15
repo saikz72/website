@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import { createTheme, Theme, ThemeProvider } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
 import { useState } from 'react';
+import { Divider } from '@mui/material';
 
 /*Common Theme configuration for both dark and light mode */
 const commonTheme: any = {
@@ -68,9 +69,13 @@ function App() {
     <ThemeProvider theme={globalTheme}>
       <Navbar setTheme={setTheme} theme={theme} />
       <AboutMe />
+      <Divider light />
       <Experience />
+      <Divider light />
       <Project />
+      <Divider light />
       <Contact />
+      <Divider light />
     </ThemeProvider>
   );
 }

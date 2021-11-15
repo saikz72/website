@@ -2,6 +2,8 @@ import { Card, CardContent, Container, Stack, Typography, CardMedia, Box, Divide
 import { experienceInfo } from '../contents/data';
 import profile from '../assets/profile.jpg';
 import facebookLogo from '../assets/Facebook-Logo.png';
+import metaLogo from '../assets/MetaLogo.gif';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 type ExperienceProps = {};
 
@@ -27,7 +29,7 @@ const InformationCard = (props: InformationCardProps): React.ReactElement => {
     <Card raised={true} sx={{ margin: 4, maxWidth: 345 }}>
       <CardContent>
         <Stack direction="column">
-          <CardMedia component="img" height="100vh" image={facebookLogo} alt="Company Logo" />
+          <CardMedia component="img" height="100vh" image={metaLogo} alt="Company Logo" />
           <Divider />
           <Stack direction="column">
             <Typography align="left" gutterBottom variant="h6">
@@ -53,19 +55,49 @@ const InformationCard = (props: InformationCardProps): React.ReactElement => {
   );
 };
 
+const mobileView = (
+  <Box
+    sx={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-evenly',
+    }}
+  >
+    {experienceInfo.map(({ companyName, role, description, date }, index) => {
+      return (
+        <InformationCard key={index} companyName={companyName} role={role} description={description} date={date} />
+      );
+    })}
+  </Box>
+);
+
+const webView = (
+  <Box
+    sx={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginRight: 10,
+      marginLeft: 10,
+    }}
+  >
+    {experienceInfo.map(({ companyName, role, description, date }, index) => {
+      return (
+        <InformationCard key={index} companyName={companyName} role={role} description={description} date={date} />
+      );
+    })}
+  </Box>
+);
+
 const Project = (props: ExperienceProps): React.ReactElement => {
+  const matches = useMediaQuery('(max-width:600px)');
   return (
     <div id="Experience">
       <Typography color="secondary" align="center" variant="h3">
         Experiences
       </Typography>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-        {experienceInfo.map(({ companyName, role, description, date }, index) => {
-          return (
-            <InformationCard key={index} companyName={companyName} role={role} description={description} date={date} />
-          );
-        })}
-      </Box>
+      {matches ? mobileView : webView}
     </div>
   );
 };
