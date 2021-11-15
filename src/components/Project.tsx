@@ -1,4 +1,15 @@
-import { Card, CardContent, CardMedia, Stack, Typography, Box, Divider, IconButton, Tooltip } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Stack,
+  Typography,
+  Box,
+  Divider,
+  IconButton,
+  Tooltip,
+  Link,
+} from '@mui/material';
 import { projectInfo } from '../contents/data';
 import metaLogo from '../assets/MetaLogo.gif';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -10,12 +21,17 @@ type InformationCardProps = {
   title: string;
   description: string;
   date: string;
+  githubLink?: string;
+};
+
+const githubLinkClick = (githubLink: string) => {
+  <Link href={githubLink}></Link>;
 };
 
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
-  const { title, description, date } = props;
+  const { title, description, date, githubLink } = props;
   return (
-    <Card raised={true} sx={{ margin: 4, maxWidth: 345 }}>
+    <Card sx={{ margin: 4, maxWidth: 345 }}>
       <CardContent>
         <CardMedia component="img" height="100vh" image={metaLogo} alt="Project Logo" />
         <Divider />
@@ -34,16 +50,16 @@ const InformationCard = (props: InformationCardProps): React.ReactElement => {
           </Typography>
         </Stack>
         <Stack direction="row" sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton onClick={(_) => _}>
+          <Link href={githubLink} target="_blank" sx={{ marginRight: 2 }}>
             <Tooltip title="Learn more about the project on github">
               <GitHubIcon />
             </Tooltip>
-          </IconButton>
-          <IconButton onClick={(_) => _}>
+          </Link>
+          <Link href="#ComingSoon" target="_blank">
             <Tooltip title="Live demo of the project">
               <PlayCircleOutlineIcon />
             </Tooltip>
-          </IconButton>
+          </Link>
         </Stack>
       </CardContent>
     </Card>
@@ -57,8 +73,10 @@ const Project = (props: ProjectProps): React.ReactElement => {
         Projects
       </Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-        {projectInfo.map(({ title, description, date }, index) => {
-          return <InformationCard key={index} title={title} description={description} date={date} />;
+        {projectInfo.map(({ title, description, date, githubLink }, index) => {
+          return (
+            <InformationCard key={index} githubLink={githubLink} title={title} description={description} date={date} />
+          );
         })}
       </Box>
     </div>

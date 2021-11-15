@@ -60,7 +60,7 @@ const darkTheme: Theme = createTheme({
 });
 
 function App() {
-  const [theme, setTheme] = useState<string>('light');
+  const [theme, setTheme] = useState<string>('dark');
 
   const globalTheme = theme === 'light' ? lightTheme : darkTheme;
   console.log('pressed');

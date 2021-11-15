@@ -26,7 +26,7 @@ const companyLogo = (companyName: String) => {
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
   const { role, description, date } = props;
   return (
-    <Card raised={true} sx={{ margin: 4, maxWidth: 345 }}>
+    <Card sx={{ margin: 4, maxWidth: 345 }}>
       <CardContent>
         <Stack direction="column">
           <CardMedia component="img" height="100vh" image={metaLogo} alt="Company Logo" />
