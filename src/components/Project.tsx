@@ -38,7 +38,6 @@ const DisplayProjectImage = (index: number): React.ReactElement => {
 
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
   const { title, description, date, githubLink, liveDemoLink, index } = props;
-  console.log(index);
   return (
     <Card sx={{ margin: 4, maxWidth: 345 }}>
       <CardContent>
