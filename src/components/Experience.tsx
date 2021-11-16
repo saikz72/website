@@ -1,7 +1,5 @@
 import { Card, CardContent, Stack, Typography, CardMedia, Box, Divider } from '@mui/material';
 import { experienceInfo } from '../contents/data';
-import profile from '../assets/profile.jpg';
-import facebookLogo from '../assets/Facebook-Logo.png';
 import metaLogo from '../assets/MetaLogo.gif';
 import useMediaQuery from '@mui/material/useMediaQuery';
 

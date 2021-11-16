@@ -1,31 +1,38 @@
-import { Typography, Divider } from '@mui/material';
-import profile from '../assets/profile.jpg';
+import { Typography, Box } from '@mui/material';
+import profile from '../assets/profile.jpeg';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 type AboutProps = {};
 
-const styles: any = {
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginRight: '100px',
-  marginLeft: '100px',
-};
-
 const AboutMe = (props: AboutProps) => {
+  const matches = useMediaQuery('(max-width:600px)');
+
   return (
     <div id="AboutMe">
       <Typography color="secondary" align="center" variant="h3">
         About Me
       </Typography>
-      <div style={styles}>
-        <img src={profile} width="100" height="100" alt="Profile" />
-        <Divider orientation="horizontal" light={true} />
-        {/* <Typography>
-          In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
-          form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a
-          placeholder before final copy is available.
-        </Typography> */}
-      </div>
+      <Box
+        sx={{
+          gap: '10px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
+        {matches ? (
+          <img src={profile} style={{ maxWidth: '50%' }} alt="Profile" />
+        ) : (
+          <img src={profile} style={{ maxWidth: '15%' }} alt="Profile" />
+        )}
+        <Box sx={{ maxWidth: '400px', mx: 4 }}>
+          <Typography variant="body1">Hi, my name</Typography>
+          <Typography variant="h3">Saikou Ceesay</Typography>
+          <Typography gutterBottom>I am a software engineering student</Typography>
+        </Box>
+      </Box>
     </div>
   );
 };

@@ -67,7 +67,7 @@ function Navbar(props: NavbarProps) {
         elevation={0}
         sx={{
           backgroundColor: (theme) =>
-            theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.background.paper,
+            theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.background.default,
         }}
       >
         <Toolbar>
@@ -126,7 +126,7 @@ function Navbar(props: NavbarProps) {
         elevation={0}
         sx={{
           backgroundColor: (theme) =>
-            theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.background.paper,
+            theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.background.default,
         }}
       >
         <Toolbar>
