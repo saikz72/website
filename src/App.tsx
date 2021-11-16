@@ -51,7 +51,8 @@ const darkTheme: Theme = createTheme({
       main: '#fff',
     },
     background: {
-      paper: 'black',
+      paper: '#001E3C',
+      default: '#0A1929',
     },
     text: {
       primary: '#fff',
@@ -61,7 +62,8 @@ const darkTheme: Theme = createTheme({
 
 function App() {
   const [theme, setTheme] = useState<string>('dark');
-
+  console.log(darkTheme);
+  console.log(lightTheme);
   const globalTheme = theme === 'light' ? lightTheme : darkTheme;
   return (
     <ThemeProvider theme={globalTheme}>

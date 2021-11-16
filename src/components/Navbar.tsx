@@ -111,7 +111,7 @@ function Navbar(props: NavbarProps) {
   const mobileView = (
     <div>
       <CssBaseline />
-      <AppBar color="default" position="absolute" enableColorOnDark={true} elevation={0}>
+      <AppBar color="primary" position="absolute" enableColorOnDark elevation={0}>
         <Toolbar>
           <Typography color="secondary" variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Saikou Ceesay
