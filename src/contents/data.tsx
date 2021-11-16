@@ -35,7 +35,7 @@ export const projectInfo = [
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
     date: '5th May, 2020',
-    githubLink: 'https://www.github.com/saikz72',
+    githubLink: 'https://github.com/McGill-ECSE321-Winter2021/project-group-05',
     liveDemoLink: '',
   },
   {
@@ -43,7 +43,7 @@ export const projectInfo = [
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
     date: '5th May, 2020',
-    githubLink: 'https://www.github.com/saikz72',
+    githubLink: 'https://github.com/himelsaha29/Google_Montreal_Hackathon_2021',
     liveDemoLink: '',
   },
   {

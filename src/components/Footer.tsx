@@ -1,8 +1,8 @@
 import { Container, Typography } from '@mui/material';
 
-type ContactProps = {};
+type FooterProps = {};
 
-const Contact = (props: ContactProps) => {
+const Footer = (props: FooterProps) => {
   return (
     <Container id="Contact" sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
       <Typography color="secondary" variant="h3">
@@ -12,4 +12,4 @@ const Contact = (props: ContactProps) => {
   );
 };
 
-export default Contact;
+export default Footer;

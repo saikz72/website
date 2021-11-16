@@ -6,7 +6,7 @@ import AboutMe from './components/AboutMe';
 import Experience from './components/Experience';
 import Navbar from './components/Navbar';
 import Project from './components/Project';
-import Contact from './components/Contact';
+import Footer from './components/Footer';
 import { createTheme, Theme, ThemeProvider } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
 import { useState } from 'react';
@@ -74,7 +74,7 @@ function App() {
       <Divider light />
       <Project />
       <Divider light />
-      <Contact />
+      <Footer />
       <Divider light />
     </ThemeProvider>
   );
