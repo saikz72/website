@@ -61,7 +61,15 @@ function Navbar(props: NavbarProps) {
   const webView = (
     <div>
       <CssBaseline />
-      <AppBar color="default" position="absolute" enableColorOnDark={true} elevation={0}>
+      <AppBar
+        position="absolute"
+        enableColorOnDark={true}
+        elevation={0}
+        sx={{
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.background.paper,
+        }}
+      >
         <Toolbar>
           {/** Header for mobile view */}
           <Typography color="secondary" variant="h6" component="div" sx={{ flexGrow: 1 }}>
