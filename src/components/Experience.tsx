@@ -14,15 +14,6 @@ type InformationCardProps = {
   date: string; //update this value to display date correctly
 };
 
-const companyLogo = (companyName: String) => {
-  switch (companyName) {
-    case 'Facebook':
-      return facebookLogo;
-    default:
-      return '';
-  }
-};
-
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
   const { role, description, date } = props;
   return (

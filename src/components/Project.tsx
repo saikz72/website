@@ -1,6 +1,10 @@
 import { Card, CardContent, CardMedia, Stack, Typography, Box, Divider, Tooltip, Link } from '@mui/material';
 import { projectInfo } from '../contents/data';
 import metaLogo from '../assets/MetaLogo.gif';
+import eagleEye from '../assets/eagleEye.jpeg';
+import scheduling from '../assets/scheduling.jpeg';
+import mural from '../assets/mural.jpeg';
+import supportQ from '../assets/supportQ.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
@@ -12,14 +16,33 @@ type InformationCardProps = {
   date: string;
   githubLink?: string;
   liveDemoLink?: string;
+  index: number;
+};
+
+const DisplayProjectImage = (index: number): React.ReactElement => {
+  if (index === 0) {
+    return <CardMedia component="img" height="100vh" image={scheduling} alt="Project Logo" />;
+  }
+  if (index === 1) {
+    return <CardMedia component="img" height="100vh" image={mural} alt="Project Logo" />;
+  }
+  if (index === 2) {
+    return <CardMedia component="img" height="100vh" image={supportQ} alt="Project Logo" />;
+  }
+  if (index === 3) {
+    return <CardMedia component="img" height="100vh" image={eagleEye} alt="Project Logo" />;
+  } else {
+    return <CardMedia component="img" height="100vh" image={metaLogo} alt="Project Logo" />;
+  }
 };
 
 const InformationCard = (props: InformationCardProps): React.ReactElement => {
-  const { title, description, date, githubLink, liveDemoLink } = props;
+  const { title, description, date, githubLink, liveDemoLink, index } = props;
+  console.log(index);
   return (
     <Card sx={{ margin: 4, maxWidth: 345 }}>
       <CardContent>
-        <CardMedia component="img" height="100vh" image={metaLogo} alt="Project Logo" />
+        {DisplayProjectImage(index)}
         <Divider />
         <Typography align="left" gutterBottom variant="h6">
           {title}
@@ -68,6 +91,7 @@ const Project = (props: ProjectProps): React.ReactElement => {
               description={description}
               date={date}
               liveDemoLink={liveDemoLink}
+              index={index}
             />
           );
         })}
