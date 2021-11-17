@@ -22,7 +22,7 @@ const Copyright = () => {
   );
 };
 
-const Footer = () => {
+const Footer = (props: FooterProps) => {
   return (
     <Box
       id="Contact"
