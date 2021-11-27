@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/website/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/website/static/js/main.94f83c60.chunk.js",
-    "main.js.map": "/website/static/js/main.94f83c60.chunk.js.map",
+    "main.js": "/website/static/js/main.8a0f8a8a.chunk.js",
+    "main.js.map": "/website/static/js/main.8a0f8a8a.chunk.js.map",
     "runtime-main.js": "/website/static/js/runtime-main.d0e00a40.js",
     "runtime-main.js.map": "/website/static/js/runtime-main.d0e00a40.js.map",
     "static/css/2.497c5617.chunk.css": "/website/static/css/2.497c5617.chunk.css",
@@ -18,6 +18,7 @@
     "static/media/eagleEye.40ba589e.jpeg": "/website/static/media/eagleEye.40ba589e.jpeg",
     "static/media/mural.954b2c2f.jpeg": "/website/static/media/mural.954b2c2f.jpeg",
     "static/media/profile.491eb91f.jpeg": "/website/static/media/profile.491eb91f.jpeg",
+    "static/media/robot.e8c5a36b.jpeg": "/website/static/media/robot.e8c5a36b.jpeg",
     "static/media/300.css": "/website/static/media/roboto-vietnamese-300-normal.af9afdc1.woff2",
     "static/media/400.css": "/website/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2",
     "static/media/500.css": "/website/static/media/roboto-vietnamese-500-normal.b8e494da.woff2",
@@ -30,6 +31,6 @@
     "static/css/2.497c5617.chunk.css",
     "static/js/2.5b7be951.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.94f83c60.chunk.js"
+    "static/js/main.8a0f8a8a.chunk.js"
   ]
 }
