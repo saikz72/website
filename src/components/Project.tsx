@@ -3,6 +3,7 @@ import { projectInfo } from '../contents/data';
 import metaLogo from '../assets/MetaLogo.gif';
 import eagleEye from '../assets/eagleEye.jpeg';
 import scheduling from '../assets/scheduling.jpeg';
+import robot from '../assets/robot.jpeg';
 import mural from '../assets/mural.jpeg';
 import supportQ from '../assets/supportQ.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -31,6 +32,8 @@ const DisplayProjectImage = (index: number): React.ReactElement => {
   }
   if (index === 3) {
     return <CardMedia component="img" height="100vh" image={eagleEye} alt="Project Logo" />;
+  } else if (index === 4) {
+    return <CardMedia component="img" height="100vh" image={robot} alt="Robot image" />;
   } else {
     return <CardMedia component="img" height="100vh" image={metaLogo} alt="Project Logo" />;
   }

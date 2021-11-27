@@ -48,4 +48,13 @@ export const projectInfo = [
     githubLink: 'https://github.com/saikz72/eagle-eye',
     liveDemoLink: '',
   },
+
+  {
+    title: 'Legendary Color Sorter',
+    description: `In a team of 4, we built a robotic system that sorts color blocks in respective containers. I was responsible for integrating
+    the software with the robot. I also built the color detection algorithm to whihc had a success rate of 98% of detecting a color of an object.`,
+    date: '5th September, 2021 - 26th November, 2021',
+    githubLink: 'https://github.com/mcgill-ecse211-f21/project-t25',
+    liveDemoLink: '',
+  },
 ];
