@@ -1,6 +1,7 @@
 import { Card, CardContent, CardMedia, Stack, Typography, Box, Divider, Tooltip, Link } from '@mui/material';
 import { projectInfo } from '../contents/data';
 import metaLogo from '../assets/MetaLogo.gif';
+import fluidSimulation from '../assets/fluid-simulation.gif';
 import eagleEye from '../assets/eagleEye.jpeg';
 import scheduling from '../assets/scheduling.jpeg';
 import robot from '../assets/robot.jpeg';
@@ -34,6 +35,8 @@ const DisplayProjectImage = (index: number): React.ReactElement => {
     return <CardMedia component="img" height="100vh" image={eagleEye} alt="Project Logo" />;
   } else if (index === 4) {
     return <CardMedia component="img" height="100vh" image={robot} alt="Robot image" />;
+  } else if (index === 5) {
+    return <CardMedia component="img" height="100vh" image={fluidSimulation} alt="Project Logo" />;
   } else {
     return <CardMedia component="img" height="100vh" image={metaLogo} alt="Project Logo" />;
   }

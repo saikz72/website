@@ -57,4 +57,11 @@ export const projectInfo = [
     githubLink: 'https://github.com/mcgill-ecse211-f21/project-t25',
     liveDemoLink: '',
   },
+  {
+    title: '2-D Real Time Fluid Simulation',
+    description: `In a team of 4, we built a fluid simulation with the computational speedup of using parallesm with cuda.`,
+    date: '5th November, 2021 - 11th December, 2021',
+    githubLink: 'https://github.com/saikz72/Fluid-Simulation',
+    liveDemoLink: '',
+  },
 ];
